@@ -4,4 +4,4 @@
 
 
 - Technologies used: PHP, MYSQLi, Javascript
-- Libraries: #Tailwindcss, #leafletjs
+- Libraries: Tailwindcss, leafletjs
