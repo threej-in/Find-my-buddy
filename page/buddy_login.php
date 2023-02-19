@@ -4,6 +4,7 @@
     <?php include '../template/head.php' ?>
     
     <body>
+        
         <?php include '../template/header.php' ?>
         <div class="p-10 px-3 my-5 rounded border-2 w-1/3 flex flex-col self-center m-auto">
             <form class="m-auto text-right" method="post" enctype="multipart/form-data">
