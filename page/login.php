@@ -33,31 +33,27 @@
         </div>
     <?php 
         global $connection;
-                $connection=new mysqli("localhost","root","");
-                $connection->select_db("find_my_buddy");
-                if(isset($connection->connection_error)){
-                    die("Connection faild...".$con->connect_error."<br/>");        
-                }else{
-                   //echo"Connection Successful.!<br/>";
-                }
-                if(isset($_POST['btnSubmit'])){
-                    $ano=$_POST['aadharno'];
-                    $key='mykey';
-                    $pass=hash_hmac('sha256',$_POST['password'],$key);  
-                    $main_q="select aadhar_no from buddy_master where aadhar_no='".$ano."' and Password='".$pass."'";
+        $connection=new mysqli("localhost","root","");
+        $connection->select_db("find_my_buddy");
+        if(isset($connection->connection_error)){
+            die("Connection faild...".$con->connect_error."<br/>");        
+        }else{
+            //echo"Connection Successful.!<br/>";
+        }
+        if(isset($_POST['btnSubmit'])){
+            $ano=$_POST['aadharno'];
+            $key='mykey';
+            $pass=hash_hmac('sha256',$_POST['password'],$key);  
+            $main_q="select aadhar_no from buddy_master where aadhar_no='".$ano."' and Password='".$pass."'";
             $qryReturn=$connection->query($main_q);
-            //$row = mysqli_fetch_array($qryReturn);
             $count=mysqli_num_rows($qryReturn);
             if($count==0)
                 echo"invalid data";
             else{               
                 echo"Loged in successfully";  
-                //$_SESSION['teamname']=$TeamName;  
-//                print_r($_SESSION);
-                //echo'<script type="text/javascript">location.href="Player_Select.php?teamname='.$TeamName.'";</script>';
             }
-                } 
-                $connection->close();
+        } 
+        $connection->close();
 
         includeFile('../template/footer.php', $scripts ?? []) 
         

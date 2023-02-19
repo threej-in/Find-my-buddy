@@ -32,8 +32,16 @@ var clickMarker = L.marker([0,0]).addTo(map);
 map.on('click', e=>{
     map.removeLayer(clickMarker);
     clickMarker = L.marker(e.latlng, {draggable: true, autoPan: true}).addTo(map);
-    clickMarker.bindPopup(`<button class=" drop-shadow-md shadow-black text-amber-600" onClick="console.log('hi')">Add a missing place</button>`)
+    clickMarker.bindPopup(
+        `<button 
+            class=" drop-shadow-md shadow-black text-amber-600" 
+            onClick="document.querySelector('div#newPlace').style.display='block'"
+        >Add a missing place</button>`
+    ).openPopup()
 })
+function newPlaceForm(){
+    
+}
 
 //get user location
 navigator.geolocation.watchPosition(success, error);
