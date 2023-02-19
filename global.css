@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+input{
+    @apply border-2 w-full
+}
+
+td{
+    @apply text-gray-500
+}
+td>*{
+    @apply my-3 ml-1
+}

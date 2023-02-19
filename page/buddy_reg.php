@@ -5,49 +5,31 @@
     
     <body>
         <?php include '../template/header.php' ?>
-            <div class="p-2 w-1/2 flex flex-col self-center m-auto">
+            <div class="py-4 px-3 my-5 rounded border-2 w-1/2 flex flex-col self-center m-auto">
                 <h2 class="text-center font-bold m-4 text-lg">REGISTRATION FORM</h2>
-                <form method='post' enctype="multipart/form-data" class="flex flex-col gap-2">
+                <form method='post' enctype="multipart/form-data" class="m-auto text-right">
                     <table>
                         <tr>
                             <td><label for="username">USER NAME:</label></td>
                             <td><input type="text" id="username" name="username" required></td>
                         </tr>
                         <tr>
-                            <td><label for="aadharno">AADHAR NO:</label></td>
-                            <td><input type="text" id="aadharno" name="aadharno" maxlength="12" required></td>
-                        </tr>
-                        <tr>
                             <td><label for="email">EMAIL ID:</label></td>
                             <td><input type="email" id="email" name="email" required></td>
                         </tr>
                         <tr>
-                            <td><label for="mobno">MOBILE NO:</label></td>
-                            <td><input type="text" id="mobno" name="mobno" maxlegth="10" required></td>
-                        </tr>
-                        <tr>
                             <td><label for="gender">GENDER:</label></td>
                             <td>
-                            <input type="radio" name="gender" value="male"> Male
-                            <input type="radio" name="gender" value="female"> Female
-                            <input type="radio" name="gender" value="other"> Others
+                                <div class="flex gap-2">
+                                    <input type="radio" name="gender" value="male"> Male
+                                    <input type="radio" name="gender" value="female"> Female
+                                    <input type="radio" name="gender" value="other"> Others
+                                </div>
                             </td>
                         </tr>
                         <tr>
                             <td><label for="dob">DATE OF BIRTH:</label></td>
-                            <td><input type="date" name="dob" value="dob"></td>
-                        </tr>
-                        <tr>
-                            <td><label for="add">Address:</label></td>
-                            <td><textarea name="txtadd"></textarea>
-                        </tr>
-                        <tr>
-                            <td><label for="favsub">FAVOURITE SUBJECT:</label></td>
-                            <td><input type="text" id="favsub" name="favsub" required></td>
-                        </tr>
-                        <tr>
-                            <td><label for="skills">SKILL:</label></td>
-                            <td><input type="text" id="skills" name="skills" required></td> 
+                            <td class="text-left"><input type="date" name="dob" value="dob"></td>
                         </tr>
                         <tr>
                             <td><label for="password">PASSWORD:</label></td>
@@ -58,8 +40,8 @@
                             <td><input type="password" id="cfn_pwd" name="cfn_pwd" required></td>
                         </tr>                        
                         <tr>
-                            <td><input type="submit" name="btnSubmit" value="Submit"/></td>
-                            <td><input type="reset" name="btnSubmit" value="Reset"/></td>
+                            <td colspan="2"><input class=" cursor-pointer w-full rounded-md py-1 bg-sky-600 text-white" type="submit" name="btnSubmit" value="Submit"/></td>
+                            <!-- <td><input type="reset" name="btnSubmit" value="Reset"/></td> -->
                         </tr>                         
                     </table>       
                 </form>

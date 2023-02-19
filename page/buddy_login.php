@@ -5,29 +5,28 @@
     
     <body>
         <?php include '../template/header.php' ?>
-            <div class="p-2 w-1/2 flex flex-col self-center m-auto">
-	<form method="post" enctype="multipart/form-data">
-		<table>
-			<tr>
-				<td>AADHAR NO:</td>
-				<td><input type="text" id="aadharno" name="aadharno"></td>
-			</tr>
-			<tr>
-				<td>PASSWORD:</td>
-				<td><input type="password" id="password" name="password"></td>
-			</tr>
-			<tr>
-				<td colspan="2" align="center">
-					<input type="submit" name="btnSubmit" value="Login">
-				</td>
-			</tr>
-		</table>
-	</form>
-    </div>
+        <div class="p-10 px-3 my-5 rounded border-2 w-1/3 flex flex-col self-center m-auto">
+            <form class="m-auto text-right" method="post" enctype="multipart/form-data">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>AADHAR NO:</td>
+                            <td><input type="text" id="aadharno" name="aadharno"></td>
+                        </tr>
+                        <tr>
+                            <td>PASSWORD:</td>
+                            <td><input type="password" id="password" name="password"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input class=" cursor-pointer w-full rounded-md py-1 bg-sky-600 text-white" type="submit" name="btnSubmit" value="Login">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
     <?php 
-        $scripts['_extra_script_tags'] = '
-        <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
-        <script src="script/map.js"></script>';
         global $connection;
                 $connection=new mysqli("localhost","root","");
                 $connection->select_db("find_my_buddy");
@@ -55,7 +54,7 @@
                 } 
                 $connection->close();
 
-        includeFile('../template/footer.php', $scripts) 
+        includeFile('../template/footer.php', $scripts ?? []) 
         
     ?>
     </body>
