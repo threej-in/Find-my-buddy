@@ -13,11 +13,11 @@
                     <table>
                         <tbody>
                             <tr>
-                                <td>AADHAR NO:</td>
-                                <td><input type="text" id="aadharno" name="aadharno"></td>
+                                <td>email id:</td>
+                                <td><input type="email" id="emailid" name="emailid"></td>
                             </tr>
                             <tr>
-                                <td>PASSWORD:</td>
+                                <td>password:</td>
                                 <td><input type="password" id="password" name="password"></td>
                             </tr>
                             <tr>
@@ -28,7 +28,7 @@
                         </tbody>
                     </table>
                 </form>
-                <a href="page/registeration.php">Don't have an account? Register here.</a>
+                <a href="page/buddy_reg.php">Don't have an account? Register here.</a>
             </div>
         </div>
     <?php 
@@ -41,10 +41,10 @@
             //echo"Connection Successful.!<br/>";
         }
         if(isset($_POST['btnSubmit'])){
-            $ano=$_POST['aadharno'];
+            $email=$_POST['emailid'];
             $key='mykey';
             $pass=hash_hmac('sha256',$_POST['password'],$key);  
-            $main_q="select aadhar_no from buddy_master where aadhar_no='".$ano."' and Password='".$pass."'";
+            $main_q="select buddy_email from buddy_master where buddy_email='".$email."' and Password='".$pass."'";
             $qryReturn=$connection->query($main_q);
             $count=mysqli_num_rows($qryReturn);
             if($count==0)
