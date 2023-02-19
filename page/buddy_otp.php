@@ -63,14 +63,14 @@
                }
                if(isset($_POST['btnotpSubmit'])){
                 //echo $otp;
-                    if($_POST['txtotp']==md5($_GET['emailId'])){
+                    if($_POST['txtotp']==md5($_GET['emailId'])){            
                         echo "matched";
                         $username=$_GET['userName'];
                         $emailid=$_GET['emailId'];
                         $gender=$_GET['gender'];
                         $dob=$_GET['dob'];
                         $pass=$_GET['pass'];
-                        $main_q="INSERT INTO buddy_master(buddy_name,Gender,DOB,password) VALUES('$username','$gender','$dob','$pass')";
+                        $main_q="INSERT INTO buddy_master(buddy_name,Gender,DOB,password,buddy_email) VALUES('$username','$gender','$dob','$pass','$emailid')";
                         $qryReturn=$connection->query($main_q);
                         if($qryReturn == true){                    
                             echo"<script>alert('Budyy Registered sucessfully...')</script>";
@@ -82,30 +82,7 @@
                     else{
                         echo "<script>alert('not matched.')</script>";
                     }    
-                }                   
-                            
-            
-                
-                    
-                    /**$userName=$_POST['username'];
-                    $aadharNo=$_POST['aadharno'];
-                    $emailId=$_POST['email'];
-                    $mobno=$_POST['mobno'];
-                    $gender=$_POST['gender'];
-                    $dob=$_POST['dob'];
-                    $add=$_POST['txtadd'];
-                    $favsub=$_POST['favsub'];
-                    $skill=$_POST['skills'];
-                    $key='mykey';
-                    $pass=hash_hmac('sha256',$_POST['password'],$key);
-                    //$pass=md5($_POST['password']);
-                    $cnfpass=hash_hmac('sha256',$_POST['cfn_pwd'],$key);
-                    //$cnfpass=md5($_POST['cfn_pwd']);                    
-                    if($cnfpass!=$pass){
-                        echo "<script>alert('please enter password and confirm password as same.')</script>";                        
-                    }else{
-                    **/
-                
+                }                                             
                 includeFile('../template/footer.php', $scripts) 
                 
             ?>
