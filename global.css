@@ -12,3 +12,6 @@ td{
 td>*{
     @apply my-3 ml-1
 }
+a{
+    @apply text-sm text-blue-500 visited:text-blue-800
+}
