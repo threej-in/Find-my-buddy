@@ -28,7 +28,7 @@
                         </tbody>
                     </table>
                 </form>
-                <a href="page/buddy_reg.php">Don't have an account? Register here.</a>
+                <a href="page/registeration.php">Don't have an account? Register here.</a>
             </div>
         </div>
     <?php 

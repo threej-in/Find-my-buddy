@@ -8,21 +8,21 @@
             <div class="py-4 px-3 my-5 rounded border-2 w-1/2 flex flex-col self-center m-auto">                
                 <form method='post' enctype="multipart/form-data" class="m-auto text-right">
                 <table>
-                                        <tr>
-                                            <td>
-                                                <label>enter otp:</label>
-                                            </td>
-                                            <td>
-                                                <input type="text" id="txtotp" name="txtotp">
-                                            </td>
-                                            <td>
-                                            <button class=" cursor-pointer w-full rounded-md py-1 bg-sky-600 text-white" name="btnotpGen" id="btnotpGen" >Resend OTP</button>
-                                            </td>
-                                            <td>
-                                            <button class=" cursor-pointer w-full rounded-md py-1 bg-sky-600 text-white" name="btnotpSubmit" id="btnotpSubmit" >Submit OTP</button>
-                                            </td>
-                                        </tr>
-                                    </table>
+                        <tr>
+                            <td>
+                                <label>enter otp:</label>
+                            </td>
+                            <td>
+                                <input type="text" id="txtotp" name="txtotp">
+                            </td>
+                            <td>
+                            <button class=" cursor-pointer w-full rounded-md py-1 bg-sky-600 text-white" name="btnotpGen" id="btnotpGen" >Resend OTP</button>
+                            </td>
+                            <td>
+                            <button class=" cursor-pointer w-full rounded-md py-1 bg-sky-600 text-white" name="btnotpSubmit" id="btnotpSubmit" >Submit OTP</button>
+                            </td>
+                        </tr>
+                    </table>
                 </form>
             </div>
             <?php 

@@ -63,8 +63,8 @@
                         body: formdata
                     });
     
-                    let data = await response.text();
-                    console.log(data);
+                    let data = await response.json();
+                        alert(data.message)
                     
                 } catch (error) {
                     console.log(error);
